@@ -1,0 +1,40 @@
+
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav  mode="side" >
+      <app-sidenav-list (closeSideNav)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+       <app-toolbar  (SideNavToggle)="sidenav.toggle()"></app-toolbar> 
+      <app-navtabs></app-navtabs>
+  
+      <main>
+        <router-outlet name="dashboardroute"></router-outlet>
+      </main>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <mat-nav-list class="sidenav-list">
+    <a mat-list-item routerLink="/userprofile">
+      <mat-icon>input</mat-icon>
+      <span>User Profile</span>
+    </a>
+      <a mat-list-item  routerLink="/accountsummary">
+      <mat-icon>account_circle</mat-icon>
+      <span>Account Summary</span>
+    </a>
+    <a mat-list-item  routerLink="/accountstatement">
+      <mat-icon>hotel</mat-icon>
+      <span>Account Statement</span>
+    </a>
+    <a mat-list-item routerLink="/fundstransfer">
+      <mat-icon>loyalty</mat-icon>
+      <span>Funds Transfer</span>
+    </a>
+    <a mat-list-item routerLink="/offers">
+        <mat-icon>loyalty</mat-icon>
+        <span>Logout</span>
+      </a>
+  </mat-nav-list>
